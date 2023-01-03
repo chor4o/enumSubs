@@ -40,12 +40,12 @@ else
 	echo "$assetFinder_result subdomínios encontrados pelo assetFinder"
 
 	# Rodando findomain
-	findomain-linux -q -t $url | anew -q findomain.txt
+	findomain -q -t $url | anew -q findomain.txt
 	findomain_result=$(wc -l findomain.txt | awk '{print $1;}')
 	echo "$findomain_result subdomínios encontrados pelo findomain"
 
 	# Rodando subfinder
-	subfinder -silent -d $url | anew -q subfinder.txt 
+	subfinder -all -silent -d $url | anew -q subfinder.txt 
 	subfinder_result=$(wc -l subfinder.txt | awk '{print $1;}')
 	echo "$subfinder_result subdomínios encontrados pelo subfinder"
 
